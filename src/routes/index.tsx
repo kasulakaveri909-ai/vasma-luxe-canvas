@@ -1,29 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "VASMA — Luxury Digitx, Events & Studio in Chennai" },
+      {
+        name: "description",
+        content:
+          "VASMA crafts cinematic brand experiences across Digitx, Events and Studio. Nine years of premium creative direction in Chennai.",
+      },
+      { property: "og:title", content: "VASMA — Luxury Digitx, Events & Studio" },
+      {
+        property: "og:description",
+        content: "Cinematic brand experiences across Digitx, Events and Studio.",
+      },
+      { property: "og:image", content: "/vasma/hero.jpg" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useEffect(() => {
+    window.location.replace("/vasma/index.html");
+  }, []);
   return (
     <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+      style={{
+        minHeight: "100vh",
+        background: "#0D0D0D",
+        color: "#C5A572",
+        display: "grid",
+        placeItems: "center",
+        fontFamily: "serif",
+        letterSpacing: "0.2em",
+      }}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+      VASMA
     </div>
   );
 }
